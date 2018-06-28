@@ -60,6 +60,9 @@
     <ClInclude Include="GameMessage.h">
       <Filter>Inc</Filter>
     </ClInclude>
+    <ClInclude Include="MessageText.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -90,6 +93,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ProtobufSerializerUtil.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageText.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

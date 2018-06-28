@@ -153,6 +153,7 @@
   <ItemGroup>
     <ClInclude Include="..\Protobuf\S2C\Text.pb.h" />
     <ClInclude Include="GameMessage.h" />
+    <ClInclude Include="MessageText.h" />
     <ClInclude Include="ProtobufDeserializerUtil.h" />
     <ClInclude Include="ProtobufSerializerUtil.h" />
     <ClInclude Include="SocketAddress.h" />
@@ -166,6 +167,7 @@
   <ItemGroup>
     <ClCompile Include="..\Protobuf\S2C\Text.pb.cc" />
     <ClCompile Include="GameMessage.cpp" />
+    <ClCompile Include="MessageText.cpp" />
     <ClCompile Include="ProtobufSerializerUtil.cpp" />
     <ClCompile Include="SimpleServer.cpp" />
     <ClCompile Include="SocketAddress.cpp" />

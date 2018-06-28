@@ -1,7 +1,8 @@
 #include "ProtobufSerializerUtil.h"
 #include "../Protobuf/S2C/Text.pb.h"
+#include "MessageText.h"
 
-const char* Serialize(GameMessage message) {
+const char* ProtobufSerializerUtil::Serialize(GameMessage message) {
 	if (ProtobufSerializerUtil::MessageSerializerLookups.find(message.gMessageType) != ProtobufSerializerUtil::MessageSerializerLookups.end())
 	{
 		return ProtobufSerializerUtil::MessageSerializerLookups[message.gMessageType](message);
@@ -12,7 +13,7 @@ const char* Serialize(GameMessage message) {
 	}
 }
 
-const char* SerializeText(GameMessage message)
+const char* ProtobufSerializerUtil::SerializeProtoText(GameMessage message)
 {
 	MessageText* msg = (MessageText*)&message;
 	Text proto;

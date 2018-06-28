@@ -6,12 +6,12 @@
 
 namespace ProtobufSerializerUtil
 {
-	static std::map<MessageType, std::function<const char*(GameMessage)>> MessageSerializerLookups =
-	{
-		{TypeText, SerializeProtoText },
-	};
-
 	static const char* Serialize(GameMessage message);
 
 	static const char* SerializeProtoText(GameMessage message);
+
+	static std::map<GameMessage::MessageType, std::function<const char*(GameMessage)>> MessageSerializerLookups =
+	{
+		{ GameMessage::TypeText, SerializeProtoText },
+	};
 }
