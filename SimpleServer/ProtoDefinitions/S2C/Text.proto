@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+message Text{
+    string text = 1; //text send to client
+}
