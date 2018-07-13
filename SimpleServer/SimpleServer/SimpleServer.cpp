@@ -6,6 +6,8 @@
 #include "../Protobuf/S2C/Text.pb.h"
 #include "UDPSocket.h"
 #include "SocketUtil.h"
+#include "ProtobufSerializerUtil.h"
+#include "MessageText.h"
 
 using namespace std;
 
@@ -26,13 +28,18 @@ int main()
 		return 1;
 	}
 
-	Text test_text;
+	/*Text test_text;
 	
 	test_text.set_text("test");
 
 	string outstr;
 	test_text.SerializeToString(&outstr);
-	const char* out = outstr.c_str();
+	const char* out = outstr.c_str();*/
+
+	MessageText message;
+	message.text = "test";
+	const char* out = ProtobufSerializerUtil::Serialize(message);
+
 
 
 	sockaddr_in inSockAddr;

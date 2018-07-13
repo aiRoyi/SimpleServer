@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class MessageText: GameMessage
+class MessageText: public GameMessage
 {
 public:
 	MessageText() : GameMessage(TypeText){}
