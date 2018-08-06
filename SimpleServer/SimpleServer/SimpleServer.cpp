@@ -1,13 +1,12 @@
 // SimpleServer.cpp : Defines the entry point for the console application.
 //
 
-#include "stdafx.h"
 #include "WinSock2.h"
 #include "../Protobuf/S2C/Text.pb.h"
-#include "UDPSocket.h"
-#include "SocketUtil.h"
-#include "ProtobufSerializerUtil.h"
-#include "MessageText.h"
+#include "../Socket/UDPSocket.h"
+#include "../Socket/SocketUtil.h"
+#include "../Messages/MessageText.h"
+#include "../ProtobufUtil/ProtobufSerializerUtil.h"
 
 using namespace std;
 
@@ -38,8 +37,7 @@ int main()
 
 	MessageText message;
 	message.text = "test";
-	const char* out = ProtobufSerializerUtil::Serialize(message);
-
+	const char* out = ProtobufSerializerUtil::Serialize(&message);
 
 
 	sockaddr_in inSockAddr;
@@ -56,10 +54,8 @@ int main()
 	//SocketAddress addr = SocketAddress(inet_addr("127.0.0.1"), 48000);
 	
 	UDPSocketPtr udpPtr = SocketUtil::CreateUDPSocket(SocketAddressFamily::INET);
-	int sent = udpPtr->SendTo(out, outstr.length(), addr);
+	int sent = udpPtr->SendTo(out, sizeof(GameMessage), addr);
 	
-	cout << test_text.text() << endl;
 	WSACleanup();
     return 0;
 }
-

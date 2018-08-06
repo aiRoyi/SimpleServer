@@ -151,36 +151,39 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Lobby\GameLobby.h" />
+    <ClInclude Include="..\Lobby\GamePeer.h" />
+    <ClInclude Include="..\Lobby\Room.h" />
+    <ClInclude Include="..\Messages\GameMessage.h" />
+    <ClInclude Include="..\Messages\GameMessageManager.h" />
+    <ClInclude Include="..\Messages\MessageText.h" />
+    <ClInclude Include="..\ProtobufUtil\ProtobufDeserializerUtil.h" />
+    <ClInclude Include="..\ProtobufUtil\ProtobufSerializerUtil.h" />
     <ClInclude Include="..\Protobuf\S2C\Text.pb.h" />
-    <ClInclude Include="GameMessage.h" />
-    <ClInclude Include="MessageText.h" />
-    <ClInclude Include="ProtobufDeserializerUtil.h" />
-    <ClInclude Include="ProtobufSerializerUtil.h" />
-    <ClInclude Include="SocketAddress.h" />
-    <ClInclude Include="SocketUtil.h" />
+    <ClInclude Include="..\Socket\SocketAddress.h" />
+    <ClInclude Include="..\Socket\SocketUtil.h" />
+    <ClInclude Include="..\Socket\TCPSocket.h" />
+    <ClInclude Include="..\Socket\UDPSocket.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="StringUtils.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="TCPSocket.h" />
-    <ClInclude Include="UDPSocket.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Lobby\GamePeer.cpp" />
+    <ClCompile Include="..\Lobby\Room.cpp" />
+    <ClCompile Include="..\Lobby\GameLobby.cpp" />
+    <ClCompile Include="..\Messages\GameMessage.cpp" />
+    <ClCompile Include="..\Messages\GameMessageManager.cpp" />
+    <ClCompile Include="..\Messages\MessageText.cpp" />
+    <ClCompile Include="..\ProtobufUtil\ProtobufDeserializerUtil.cpp" />
+    <ClCompile Include="..\ProtobufUtil\ProtobufSerializerUtil.cpp" />
     <ClCompile Include="..\Protobuf\S2C\Text.pb.cc" />
-    <ClCompile Include="GameMessage.cpp" />
-    <ClCompile Include="MessageText.cpp" />
-    <ClCompile Include="ProtobufSerializerUtil.cpp" />
+    <ClCompile Include="..\Socket\SocketAddress.cpp" />
+    <ClCompile Include="..\Socket\SocketAddressFactory.cpp" />
+    <ClCompile Include="..\Socket\SocketUtil.cpp" />
+    <ClCompile Include="..\Socket\TCPSocket.cpp" />
+    <ClCompile Include="..\Socket\UDPSocket.cpp" />
     <ClCompile Include="SimpleServer.cpp" />
-    <ClCompile Include="SocketAddress.cpp" />
-    <ClCompile Include="SocketAddressFactory.cpp" />
-    <ClCompile Include="SocketUtil.cpp" />
-    <ClCompile Include="stdafx.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="TCPSocket.cpp" />
-    <ClCompile Include="UDPSocket.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

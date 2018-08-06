@@ -1,17 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
     <Filter Include="Header Files">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="Inc">
       <UniqueIdentifier>{4f139ed9-fd3b-4585-8751-42488679710b}</UniqueIdentifier>
@@ -21,6 +13,19 @@
     </Filter>
     <Filter Include="Protobuf">
       <UniqueIdentifier>{2a974c99-23e0-4ab9-af34-95f1f39a8c81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ProtobufUtil">
+      <UniqueIdentifier>{9eda6dc5-76d6-421b-af0b-bc047aea70de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Socket">
+      <UniqueIdentifier>{f91a122e-c894-464b-992b-b7331162a984}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Server">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Lobby">
+      <UniqueIdentifier>{cb165717-1ede-4763-8189-0fa49d704f36}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -33,70 +38,94 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SocketAddress.h">
-      <Filter>Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="UDPSocket.h">
-      <Filter>Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="SocketUtil.h">
-      <Filter>Inc</Filter>
-    </ClInclude>
     <ClInclude Include="StringUtils.h">
-      <Filter>Inc</Filter>
-    </ClInclude>
-    <ClInclude Include="TCPSocket.h">
       <Filter>Inc</Filter>
     </ClInclude>
     <ClInclude Include="..\Protobuf\S2C\Text.pb.h">
       <Filter>Protobuf</Filter>
     </ClInclude>
-    <ClInclude Include="ProtobufSerializerUtil.h">
-      <Filter>Inc</Filter>
+    <ClInclude Include="..\ProtobufUtil\ProtobufDeserializerUtil.h">
+      <Filter>ProtobufUtil</Filter>
     </ClInclude>
-    <ClInclude Include="ProtobufDeserializerUtil.h">
-      <Filter>Inc</Filter>
+    <ClInclude Include="..\ProtobufUtil\ProtobufSerializerUtil.h">
+      <Filter>ProtobufUtil</Filter>
     </ClInclude>
-    <ClInclude Include="GameMessage.h">
-      <Filter>Inc</Filter>
+    <ClInclude Include="..\Messages\GameMessage.h">
+      <Filter>Messages</Filter>
     </ClInclude>
-    <ClInclude Include="MessageText.h">
-      <Filter>Inc</Filter>
+    <ClInclude Include="..\Messages\MessageText.h">
+      <Filter>Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Socket\SocketAddress.h">
+      <Filter>Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Socket\SocketUtil.h">
+      <Filter>Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Socket\TCPSocket.h">
+      <Filter>Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Socket\UDPSocket.h">
+      <Filter>Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Messages\GameMessageManager.h">
+      <Filter>Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lobby\GameLobby.h">
+      <Filter>Lobby</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lobby\Room.h">
+      <Filter>Lobby</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lobby\GamePeer.h">
+      <Filter>Lobby</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="stdafx.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="SimpleServer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SocketAddressFactory.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SocketAddress.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="UDPSocket.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SocketUtil.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TCPSocket.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Server</Filter>
     </ClCompile>
     <ClCompile Include="..\Protobuf\S2C\Text.pb.cc">
       <Filter>Protobuf</Filter>
     </ClCompile>
-    <ClCompile Include="GameMessage.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="..\Messages\GameMessage.cpp">
+      <Filter>Messages</Filter>
     </ClCompile>
-    <ClCompile Include="ProtobufSerializerUtil.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="..\Messages\MessageText.cpp">
+      <Filter>Messages</Filter>
     </ClCompile>
-    <ClCompile Include="MessageText.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="..\ProtobufUtil\ProtobufSerializerUtil.cpp">
+      <Filter>ProtobufUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Socket\SocketAddress.cpp">
+      <Filter>Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Socket\SocketAddressFactory.cpp">
+      <Filter>Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Socket\SocketUtil.cpp">
+      <Filter>Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Socket\TCPSocket.cpp">
+      <Filter>Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Socket\UDPSocket.cpp">
+      <Filter>Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Messages\GameMessageManager.cpp">
+      <Filter>Messages</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ProtobufUtil\ProtobufDeserializerUtil.cpp">
+      <Filter>ProtobufUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lobby\Room.cpp">
+      <Filter>Lobby</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lobby\GamePeer.cpp">
+      <Filter>Lobby</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lobby\GameLobby.cpp">
+      <Filter>Lobby</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
