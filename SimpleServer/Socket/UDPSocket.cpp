@@ -1,8 +1,9 @@
 #include "UDPSocket.h"
 #include "SocketUtil.h"
+#include "../Lobby/NetworkManager.h"
 
-
-CallbackRecvData UDPSocket::recvDataCallback = NULL;
+CallbackRecvData	UDPSocket::recvDataCallback = NULL;
+NetworkManager*		UDPSocket::recvDataObj = NULL;
 
 int UDPSocket::Bind(const SocketAddress& inBindAdress)
 {
@@ -36,7 +37,8 @@ int UDPSocket::ReceiveFrom(void* inBuffer, int inLen, SocketAddress& outFrom)
 	int readByteCount = recvfrom(mSocket, static_cast<char*>(inBuffer), inLen, 0, &outFrom.mSockAddr, &fromLength);
 	if (readByteCount >= 0)
 	{
-		recvDataCallback(inBuffer);
+
+		(recvDataObj->*recvDataCallback)(inBuffer, outFrom);
 		return readByteCount;
 	}
 	else
@@ -46,8 +48,24 @@ int UDPSocket::ReceiveFrom(void* inBuffer, int inLen, SocketAddress& outFrom)
 	}
 }
 
-void UDPSocket::setRecvDataCallback(CallbackRecvData callback)
+int UDPSocket::SetNonBlockingMode(bool inShouldBeNonBlocking)
 {
+	u_long arg = inShouldBeNonBlocking ? 1 : 0;
+	int result = ioctlsocket(mSocket, FIONBIO, &arg);
+	if (result == SOCKET_ERROR)
+	{
+		SocketUtil::ReportError("UDPSocket::SetNonBlockingMode");
+		return SocketUtil::GetLastError();
+	}
+	else
+	{
+		return NO_ERROR;
+	}
+}
+
+void UDPSocket::setRecvDataCallback(NetworkManager* ptr, CallbackRecvData callback)
+{
+	recvDataObj = ptr;
 	recvDataCallback = callback;
 }
 

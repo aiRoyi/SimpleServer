@@ -80,6 +80,12 @@
     <ClInclude Include="..\Lobby\GamePeer.h">
       <Filter>Lobby</Filter>
     </ClInclude>
+    <ClInclude Include="..\Lobby\ClientProxy.h">
+      <Filter>Lobby</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Lobby\NetworkManager.h">
+      <Filter>Lobby</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SimpleServer.cpp">
@@ -125,6 +131,12 @@
       <Filter>Lobby</Filter>
     </ClCompile>
     <ClCompile Include="..\Lobby\GameLobby.cpp">
+      <Filter>Lobby</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lobby\ClientProxy.cpp">
+      <Filter>Lobby</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Lobby\NetworkManager.cpp">
       <Filter>Lobby</Filter>
     </ClCompile>
   </ItemGroup>

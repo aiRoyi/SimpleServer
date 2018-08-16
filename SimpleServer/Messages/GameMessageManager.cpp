@@ -1,11 +1,8 @@
 #include "GameMessageManager.h"
-#include "../Socket/UDPSocket.h"
-#include "../ProtobufUtil/ProtobufDeserializerUtil.h"
-
 
 GameMessageManager::GameMessageManager()
 {
-	UDPSocket::setRecvDataCallback(onReceiveData);
+	//UDPSocket::setRecvDataCallback(onReceiveData);
 }
 
 void GameMessageManager::onReceiveData(void* data)
@@ -25,4 +22,8 @@ void GameMessageManager::onReceiveGameMessage(char code, char* data)
 	GameMessage::MessageType type = message->gMessageType;
 }
 
-GameMessageManager::~GameMessageManager(){}
+void GameMessageManager::SendGameMessage(GameMessage* message, const SocketAddress& addr)
+{
+	const char* data = ProtobufSerializerUtil::Serialize(message);
+	NetworkManager::instance->SendData(data, sizeof(GameMessage), addr);
+}
