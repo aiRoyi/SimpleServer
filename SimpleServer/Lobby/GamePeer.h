@@ -10,7 +10,7 @@ public:
 	void onRecieved(void* data);
 	void onConnected(ClientProxyPtr clientProxy);
 	void onDisconnected();
-	void SendData(GameMessage* message, int userId);
+	void SendGameMessage(GameMessage* message);
 	GamePeer* GetInstance();
 private:
 	GamePeer* instance;

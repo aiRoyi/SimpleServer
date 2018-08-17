@@ -5,14 +5,16 @@
 class Room
 {
 public:
-
-	Room();
+	static Room* instance;
+	Room(int id);
 	~Room();
-	void GetMembers();
-	void onJoinRoom();
-	void Broadcast();
+	std::vector<GamePeer*> GetMembers();
+	void onJoinRoom(GamePeer* peer);
+	void Broadcast(GameMessage* message);
+	void onPeerDisconnected(GamePeer* peer);
+	static const Room* Create(int id, GamePeer* creator);
 private:
 	int roomId;
-	std::vector<GamePeer*> members;
+	std::vector<GamePeer*> roomMembers;
 };
 

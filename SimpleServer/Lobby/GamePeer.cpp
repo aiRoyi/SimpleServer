@@ -28,7 +28,7 @@ void GamePeer::onRecieved(void* data)
 	GameMessageManager::onReceiveData(data);
 }
 
-void GamePeer::SendData(GameMessage* message, int userId)
+void GamePeer::SendGameMessage(GameMessage* message)
 {
 	const SocketAddress& address = clientPtr->GetSocketAddress();
 	GameMessageManager::SendGameMessage(message, address);

@@ -1,7 +1,7 @@
-﻿  GamePeer.cpp
-  Generating Code...
-  Compiling...
-  ClientProxy.cpp
+﻿  Room.cpp
+  NetworkManager.cpp
+  GamePeer.cpp
+  GameLobby.cpp
   Generating Code...
   Skipping... (no relevant changes detected)
   SimpleServer.cpp
@@ -9,6 +9,5 @@
   TCPSocket.cpp
   SocketUtil.cpp
   GameMessageManager.cpp
-  Room.cpp
-  NetworkManager.cpp
+  ClientProxy.cpp
   SimpleServer.vcxproj -> D:\Tools_Demo\SimpleServer\SimpleServer\SimpleServer\Debug\SimpleServer.exe
